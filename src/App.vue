@@ -1,16 +1,25 @@
 <template>
   <div id="app">
-		hotel
+		<router-view></router-view>
+    <tab-bar/>
   </div>
 </template>
 
 <script>
-
-export default {
-  name: 'App'
-}
+  import TabBar from 'components/tabbar/TabBar'
+  export default {
+    name: 'App',
+    components:{
+    	TabBar
+    },
+    motheds:{
+    }
+  }
 </script>
 
-<style>
+<style lang="less" scoped>
 	@import '~assets/css/normalize.css';
+	@import '~assets/css/base.less';
+
+	
 </style>
