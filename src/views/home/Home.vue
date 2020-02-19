@@ -2,28 +2,36 @@
 	<div id="home">
 		<scroll class="content">
 			<my-swiper :banners="banners"></my-swiper>
-
-			<index-title :title="title1"/>
-			<index-chosen/>
-			<index-title class="mt-10" :title="title2"/>
-			<index-city/>
-			<index-title :title="title3"/>
+			<div class="home-reserve">
+				<div class="btn">小鸟预定</div>
+			</div>
+			<home-title :title="title1"/>
+			<home-chosen/>
+			<home-title class="mt-10" :title="title2"/>
+			<home-city/>
+			<home-title class="mt-10" :title="title3"/>
+			<home-recommend/>
+			<home-join class="mt-10"/>
 		</scroll>
 	</div>
 </template>
 
 <script>
-	import IndexTitle from './childComps/IndexTitle'
-	import IndexChosen from './childComps/IndexChosen'
-	import IndexCity from './childComps/IndexCity'
+	import HomeTitle from './childComps/HomeTitle'
+	import HomeChosen from './childComps/HomeChosen'
+	import HomeCity from './childComps/HomeCity'
+	import HomeRecommend from './childComps/HomeRecommend'
+	import HomeJoin from './childComps/HomeJoin'
 	import MySwiper from 'components/swiper/Swiper'
 	import Scroll from 'components/scroll/Scroll'
 	export default{
 		name:'Home',
 		components:{
-			IndexTitle,
-			IndexChosen,
-			IndexCity,
+			HomeTitle,
+			HomeChosen,
+			HomeCity,
+			HomeRecommend,
+			HomeJoin,
 			MySwiper,
 			Scroll,
 		},
@@ -57,5 +65,17 @@
 		left:0;
 		right:0;
 		bottom:44px;
+	}
+	.home-reserve{
+		background:#fff;
+		padding:25px 0 15px;
+		text-align:center;
+		.btn{
+			width:50%;
+			margin:0 auto;
+			background:#3ac8a3;
+			color:#fff;
+			padding:8px 20px;
+		}
 	}
 </style>

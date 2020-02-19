@@ -2,9 +2,13 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 // 懒加载
-const Home = () => import('../views/home/Home')
-const Search = () => import('../views/search/Search')
-const Profile = () => import('../views/profile/Profile')
+const Home = () => import('views/home/Home')
+const Search = () => import('views/search/Search')
+const Profile = () => import('views/profile/Profile')
+const HotelList = () => import('views/hotelList/HotelList')
+const HotelDetail = () => import('views/hotelDetail/HotelDetail')
+const Reserve = () => import('views/reserve/Reserve')
+const Payment = () => import('views/payment/Payment')
 
 // 安装router
 Vue.use(VueRouter)
@@ -26,6 +30,22 @@ const routes = [
 	{
 		path:'/profile',
 		component:Profile
+	},
+	{
+		path:'/hotelList',
+		component:HotelList
+	},
+	{
+		path:'/hotelDetail',
+		component:HotelDetail
+	},
+	{
+		path:'/reserve',
+		component:Reserve
+	},
+	{
+		path:'/payment',
+		component:Payment
 	}
 ]
 

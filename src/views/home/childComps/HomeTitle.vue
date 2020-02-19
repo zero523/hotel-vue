@@ -1,5 +1,5 @@
 <template>
-	<div class="index-title">
+	<div class="home-title">
 		<div class="title1">
 			< {{title[0]}} >
 		</div>
@@ -15,7 +15,7 @@
 
 <script>
 	export default {
-		name:'IndexTitle',
+		name:'HomeTitle',
 		props:{
 			title:{
 				type:Array,
@@ -30,7 +30,7 @@
 <style lang="less" scoped>
 	@import '~assets/css/base.less';
 
-	.index-title{
+	.home-title{
 		background: #fff;
 		text-align:center;
 		color:@color-text;

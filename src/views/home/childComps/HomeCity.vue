@@ -1,26 +1,26 @@
 <template>
 	<div class="city-list">
-		<div class="item">
+		<div class="item" @click="ToHotelList">
 			<img class="img" src="~assets/img/home/hotcity.jpg" alt="">
 			<p class="addr">三亚市</p>
 		</div>
-		<div class="item">
+		<div class="item" @click="ToHotelList">
 			<img class="img" src="~assets/img/home/hotcity.jpg" alt="">
 			<p class="addr">三亚市</p>
 		</div>
-		<div class="item">
+		<div class="item" @click="ToHotelList">
 			<img class="img" src="~assets/img/home/hotcity.jpg" alt="">
 			<p class="addr">三亚市</p>
 		</div>
-		<div class="item">
+		<div class="item" @click="ToHotelList">
 			<img class="img" src="~assets/img/home/hotcity.jpg" alt="">
 			<p class="addr">三亚市</p>
 		</div>
-		<div class="item">
+		<div class="item" @click="ToHotelList">
 			<img class="img" src="~assets/img/home/hotcity.jpg" alt="">
 			<p class="addr">三亚市</p>
 		</div>
-		<div class="item">
+		<div class="item" @click="ToHotelList">
 			<img class="img" src="~assets/img/home/hotcity.jpg" alt="">
 			<p class="addr">三亚市</p>
 		</div>
@@ -29,7 +29,12 @@
 
 <script>
 	export default{
-		name:'IndexCity',
+		name:'HomeCity',
+		methods:{
+			ToHotelList(){
+				this.$router.push('/hotelList')
+			}
+		}
 	}
 </script>
 

@@ -1,17 +1,17 @@
 <template>
-	<div class="index-head">
+	<div class="home-head">
 		<div class="cloudafter"></div>
 	</div>
 </template>
 
 <script>
 	export default {
-		name:'IndexHead',
+		name:'HomeHead',
 	}
 </script>
 
 <style lang="less" scoped>
-	.index-head{
+	.home-head{
 		padding-top:60px;
 		background:url('~assets/img/home/logoBg.png') no-repeat center;
 		background-size:cover;

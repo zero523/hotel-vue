@@ -29,7 +29,7 @@
 
 <script>
 	export default{
-		name:'IndexChosen',
+		name:'HomeChosen',
 	}
 </script>
 
