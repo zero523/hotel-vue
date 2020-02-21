@@ -22,41 +22,36 @@
 				<span>经济型</span>
 			</div>
 		</div>
-		<div class="item" @click="ToHotelDetail">
-			<hotel-top/>
-			<div class="desc1">
-				<div class="score">
-					<ul class="star-list">
-	          <li class="all"></li>
-	          <li class="all"></li>
-	          <li class="all"></li>
-					
-	          <li class="all"></li>
-	          <li class="off"></li>
-		      </ul>
-		      <span>评分 5分</span>
-				</div>
-				<div class="price"><span>￥<b>268</b></span>起</div>
-			</div>
-			<div class="desc2">
-				<i class="icon"></i>
-				<span>金牛区</span>
-				<span>经济型</span>
-			</div>
-		</div>
 	</div>
 </template>
 
 <script>
 	import HotelTop from 'components/hotelTop/HotelTop'
+	import {getHotelList} from 'network/hotelList'
 	export default {
 		name:'HotelList',
 		components:{
 			HotelTop
 		},
+		data(){
+			return{
+				cid:null,
+				hid:'gsgs',
+				hotelList:[]
+			}
+		},
+		created(){
+			this.cid=this.$route.params.cid;
+			console.log(this.$route.params.cid)
+			// 获取该城市cid的酒店列表
+			getHotelList().then(res =>{
+				this.hotelList=res.data
+				console.log(this.hotelList)
+			})
+		},
 		methods:{
 			ToHotelDetail(){
-				this.$router.push('/hotelDetail')
+				this.$router.push('/hotelDetail/'+this.hid)
 			}
 		}
 	}

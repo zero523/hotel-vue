@@ -1,7 +1,7 @@
 <template>
 	<swiper class="my-swiper" ref="mySwiper" :not-next-tick="notNextTick" :option="swiperOption">
 		<swiper-slide class="swiper-slide" v-for="item in banners">
-			<img src="~assets/img/home/banner1.jpg" alt="">
+			<img :src="item.img" alt="">
 		</swiper-slide> 
 		<!-- Optional controls -->
     <div class="swiper-pagination" slot="pagination"></div>

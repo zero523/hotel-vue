@@ -32,19 +32,19 @@ const routes = [
 		component:Profile
 	},
 	{
-		path:'/hotelList',
+		path:'/hotelList/:cid',
 		component:HotelList
 	},
 	{
-		path:'/hotelDetail',
+		path:'/hotelDetail/:hid',
 		component:HotelDetail
 	},
 	{
-		path:'/reserve',
+		path:'/reserve/',
 		component:Reserve
 	},
 	{
-		path:'/payment',
+		path:'/payment/',
 		component:Payment
 	}
 ]

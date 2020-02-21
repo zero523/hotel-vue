@@ -6,6 +6,8 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 import less from 'less'
 
+require('./mock')
+
 Vue.config.productionTip = false
 
 // 安装插件

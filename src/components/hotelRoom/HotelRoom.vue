@@ -1,8 +1,8 @@
 <template>
 	<div class="room-list">
 		<div class="item"
-		v-for="item in roomList"
-		:key="item.id"
+		v-for="(item,index) in roomList"
+		:key="index"
 		@click="ToReserve">
 			<img src="~assets/img/hotel/roomimg1.jpg" alt="">
 			<div class="desc">

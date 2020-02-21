@@ -1,28 +1,10 @@
 <template>
 	<div class="city-list">
-		<div class="item" @click="ToHotelList">
-			<img class="img" src="~assets/img/home/hotcity.jpg" alt="">
-			<p class="addr">三亚市</p>
-		</div>
-		<div class="item" @click="ToHotelList">
-			<img class="img" src="~assets/img/home/hotcity.jpg" alt="">
-			<p class="addr">三亚市</p>
-		</div>
-		<div class="item" @click="ToHotelList">
-			<img class="img" src="~assets/img/home/hotcity.jpg" alt="">
-			<p class="addr">三亚市</p>
-		</div>
-		<div class="item" @click="ToHotelList">
-			<img class="img" src="~assets/img/home/hotcity.jpg" alt="">
-			<p class="addr">三亚市</p>
-		</div>
-		<div class="item" @click="ToHotelList">
-			<img class="img" src="~assets/img/home/hotcity.jpg" alt="">
-			<p class="addr">三亚市</p>
-		</div>
-		<div class="item" @click="ToHotelList">
-			<img class="img" src="~assets/img/home/hotcity.jpg" alt="">
-			<p class="addr">三亚市</p>
+		<div class="item"
+		v-for="(item,index) in lists" :key="index"
+		@click="ToHotelList(item.cid)">
+			<img class="img" :src="item.img" alt="">
+			<p class="addr">{{item.city}}</p>
 		</div>
 	</div>
 </template>
@@ -30,9 +12,17 @@
 <script>
 	export default{
 		name:'HomeCity',
+		props:{
+			lists:{
+				type:Array,
+				default(){
+					return []
+				}
+			}
+		},
 		methods:{
-			ToHotelList(){
-				this.$router.push('/hotelList')
+			ToHotelList(cid){
+				this.$router.push('/hotelList/'+ cid)
 			}
 		}
 	}

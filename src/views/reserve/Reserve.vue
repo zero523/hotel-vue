@@ -75,6 +75,8 @@
 <script>
 	import MySwiper from 'components/swiper/Swiper'
 	import Scroll from 'components/scroll/Scroll'
+
+	import {getHomeBanner} from 'network/home'
 	export default{
 		name:'Reserve',
 		components:{
@@ -83,22 +85,18 @@
 		},
 		data(){
 			return{
-				banners:[{
-					'id':'001',
-					'img':'~assets/img/home/banner1.jpg'
-				},{
-					'id':'002',
-					'img':'~assets/img/home/banner2.jpg'
-				},{
-					'id':'003',
-					'img':'~assets/img/home/banner2.jpg'
-				}],
+				banners:[],
 			}
 		},
 		methods:{
 			ToPay(){
 				this.$router.push('/payment')
 			}
+		},
+		mounted(){
+			getHomeBanner().then(res =>{
+				this.banners=res.data
+			})
 		}
 	}
 </script>

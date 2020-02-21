@@ -1,11 +1,13 @@
 <template>
 	<div class="recommend-wrap">
-		<div class="recommend-item">
+		<div class="recommend-item"
+		v-for="(item,index) in lists" :key="index"
+		@click="ToHotelDetail(item.hid)">
 			<div class="top">
-				<img src="~assets/img/home/recommend1.jpg" alt="">
+				<img :src="item.img" alt="">
 				<div class="desc">
-					<span class="addr">广州市天河区中山大道西1138号合生骏景广场1222室</span>
-					<span class="data">0</span>
+					<span class="addr">{{item.addr}}</span>
+					<span class="data">{{item.num}}</span>
 				</div>
 			</div>
 			<div class="bott">
@@ -19,7 +21,20 @@
 
 <script>
 	export default {
-		name:'HomeRecommend'
+		name:'HomeRecommend',
+		props:{
+			lists:{
+				type:Array,
+				default(){
+					return []
+				}
+			}
+		},
+		methods:{
+			ToHotelDetail(hid){
+				this.$router.push('/hotelDetail/'+ hid)
+			}
+		}
 	}
 </script>
 

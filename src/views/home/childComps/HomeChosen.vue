@@ -1,28 +1,12 @@
 <template>
 	<div class="chosen-list">
-		<div class="item">
-			<img class="img" src="~assets/img/home/pro2.jpg" alt="">
-			<p class="name">酒店名称</p>
-			<p class="room">酒店房型</p>
-			<p class="date">2019-03-04</p>
-		</div>
-		<div class="item">
-			<img class="img" src="~assets/img/home/pro2.jpg" alt="">
-			<p class="name">酒店名称</p>
-			<p class="room">酒店房型</p>
-			<p class="date">2019-03-04</p>
-		</div>
-		<div class="item">
-			<img class="img" src="~assets/img/home/pro2.jpg" alt="">
-			<p class="name">酒店名称</p>
-			<p class="room">酒店房型</p>
-			<p class="date">2019-03-04</p>
-		</div>
-		<div class="item">
-			<img class="img" src="~assets/img/home/pro2.jpg" alt="">
-			<p class="name">酒店名称</p>
-			<p class="room">酒店房型</p>
-			<p class="date">2019-03-04</p>
+		<div class="item"
+		v-for="(item,index) in lists" :key="index"
+		@click="ToHotelDetail(item.hid)">
+			<img class="img" :src="item.img" alt="">
+			<p class="name">{{item.name}}</p>
+			<p class="room">{{item.room}}</p>
+			<p class="date">{{item.date}}</p>
 		</div>
 	</div>
 </template>
@@ -30,6 +14,19 @@
 <script>
 	export default{
 		name:'HomeChosen',
+		props:{
+			lists:{
+				type:Array,
+				default(){
+					return []
+				}
+			}
+		},
+		methods:{
+			ToHotelDetail(hid){
+				this.$router.push('/hotelDetail/'+ hid)
+			}
+		}
 	}
 </script>
 

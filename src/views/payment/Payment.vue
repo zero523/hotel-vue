@@ -73,7 +73,15 @@
 <script>
 	import Scroll from 'components/scroll/Scroll'
 	export default {
-		name:'Payment'
+		name:'Payment',
+		components:{
+			Scroll
+		},
+		methods:{
+			ToPay(){
+				//调用支付接口。。。。
+			}
+		}
 	}
 </script>
 
